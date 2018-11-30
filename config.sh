@@ -21,20 +21,20 @@
 ##########################################################################################
 
 # Modul ID
-MODID=bravia
+MODID=helldots
 
 # Set to true if you need to enable Magic Mount
 # Most mods would like it to be enabled
 AUTOMOUNT=true
 
 # Set to true if you need to load system.prop
-PROPFILE=true
+PROPFILE=false
 
 # Set to true if you need post-fs-data script
 POSTFSDATA=false
 
 # Set to true if you need late_start service script
-LATESTARTSERVICE=true
+LATESTARTSERVICE=false
 
 ##########################################################################################
 # Installation Message
@@ -44,8 +44,8 @@ LATESTARTSERVICE=true
 
 print_modname() {
   ui_print "*******************************"
-  ui_print "     Sony Bravia Engine      "
-  ui_print "     By: Enggar Sulistyo     "
+  ui_print "        Fake Gps HellDots      "
+  ui_print "       By: Enggar Sulistyo     "
   ui_print "*******************************"
 }
 
@@ -84,24 +84,12 @@ set_permissions() {
 
   # set_perm  <filename>                         <owner> <group> <permission> <contexts> (default: u:object_r:system_file:s0)
   # set_perm  $MODPATH/system/bin/app_process32   0       2000    0755         u:object_r:zygote_exec:s0
-  #set_perm  $MODPATH/system/bin/*         0       2000    0755         u:object_r:dex2oat_exec:s0
+  # set_perm  $MODPATH/system/bin/*         0       2000    0755         u:object_r:dex2oat_exec:s0
   # set_perm  $MODPATH/system/lib/libart.so       0       0       0644
 
   # The following is default permissions, DO NOT remove
-   set_perm_recursive  $MODPATH/system/bin  0  0   0755    0755
-   set_perm_recursive  $MODPATH/system/app  0  0   0755    0644
-   chmod 0755 $MODPATH/system/etc/be_album
-   chmod 0755 $MODPATH/system/etc/be_photo
-   chmod 0755 $MODPATH/system/etc/be_movie
-   chmod 0755 $MODPATH/system/etc/be_movie_setting
-   chmod 0755 $MODPATH/system/etc/be_movie_spc
-   chmod 0755 $MODPATH/system/etc/be2_album
-   chmod 0755 $MODPATH/system/etc/be2_album01
-   chmod 0755 $MODPATH/system/etc/be2_album02
-   chmod 0755 $MODPATH/system/etc/be2_album_mapping
-   set_perm_recursive  $MODPATH/system/framework  0  0   0755    0644
-   set_perm_recursive  $MODPATH/system/lib  0  0   0755    0644
-  #set_perm_recursive  $MODPATH  0  0  0755  0644
+    set_perm_recursive $MODPATH  0  0  0755  0644
+  
 }
 
 ##########################################################################################
